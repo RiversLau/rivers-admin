@@ -25,7 +25,7 @@
     <!-- myBatis sessionFactory配置 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value="classpath:configure/mybatis-config.xml"/>
+        <property name="configLocation" value="classpath:configure/mybatis-configure.xml"/>
         <property name="mapperLocations" value="classpath:mappers/*.xml"/>
         <property name="plugins">
             <array>
@@ -42,7 +42,7 @@
         </property>
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.recorvery.base.mapper"/>
+        <property name="basePackage" value="com.zhaoxiang.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 
