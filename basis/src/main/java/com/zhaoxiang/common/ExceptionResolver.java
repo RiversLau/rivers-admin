@@ -1,6 +1,5 @@
 package com.zhaoxiang.common;
 
-import com.alibaba.fastjson.JSON;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.web.servlet.ModelAndView;
@@ -10,8 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Author: Rivers
@@ -25,24 +22,6 @@ public class ExceptionResolver extends AbstractHandlerExceptionResolver {
     protected ModelAndView doResolveException(HttpServletRequest request,
                                               HttpServletResponse response, Object handler, Exception ex) {
 
-        //得到操作的方法
-        int errcode = ReturnCode.SYSTEM_EXCEPTION_CODE;
-
-        String errMsg = "系统错误!";
-        if (ex != null) {
-            logger.error(ex.getMessage(), ex);
-            if (ex instanceof FatalBizException) {
-                errcode = ((FatalBizException) ex).getErrorcode();
-                logger.info("FatalBizException:" + ex.getMessage());
-                errMsg = ex.getMessage();
-            }
-
-        }
-
-        Map<String, Object> jsonMap = new HashMap<String, Object>();
-        jsonMap.put("returnCode", errcode);
-        jsonMap.put("message", errMsg);
-        writeJson(response, JSON.toJSONString(jsonMap));
         return null;
     }
 

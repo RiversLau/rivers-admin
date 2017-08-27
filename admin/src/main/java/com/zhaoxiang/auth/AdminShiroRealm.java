@@ -1,5 +1,7 @@
 package com.zhaoxiang.auth;
 
+import com.zhaoxiang.service.AdminService;
+import com.zhaoxiang.vo.AdminVO;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -35,7 +37,7 @@ public class AdminShiroRealm extends AuthorizingRealm {
 
         String username = usernamePasswordToken.getUsername();
 
-        AdminUserVO adminUser = adminService.getEnabledUserByUsername(username);
+        AdminVO adminUser = adminService.getEnabledUserByUsername(username);
         if (adminUser == null) {
             throw new UnknownAccountException("用户名或密码错误");
         }
