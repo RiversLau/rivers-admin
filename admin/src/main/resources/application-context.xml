@@ -22,5 +22,5 @@
     <import resource="classpath:configure/spring-mvc.xml"/>
     <import resource="classpath:configure/spring-shiro.xml"/>
     <import resource="classpath:configure/spring-mybatis.xml"/>
-    <import resource="classpath:configure/spring-redis.xml"/>
+    <!--<import resource="classpath:configure/spring-redis.xml"/>-->
 </beans>

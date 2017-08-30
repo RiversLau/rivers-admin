@@ -1,5 +1,6 @@
 package com.zhaoxiang.service;
 
+import com.zhaoxiang.entity.Admin;
 import com.zhaoxiang.vo.AdminVO;
 
 /**
@@ -8,5 +9,5 @@ import com.zhaoxiang.vo.AdminVO;
  */
 public interface AdminService {
 
-    AdminVO getEnabledUserByUsername(String username);
+    AdminVO getStatusEqualUserByUsername(String username, Admin.Status status);
 }

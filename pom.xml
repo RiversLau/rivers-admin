@@ -92,6 +92,13 @@
             <version>5.0.0</version>
         </dependency>
 
+        <!-- MySql数据库连接依赖包 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.30</version>
+        </dependency>
+
         <!-- shiro相关依赖包 -->
         <dependency>
             <groupId>org.apache.shiro</groupId>

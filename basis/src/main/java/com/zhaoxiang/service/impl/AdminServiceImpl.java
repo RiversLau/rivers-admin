@@ -1,10 +1,14 @@
 package com.zhaoxiang.service.impl;
 
+import com.zhaoxiang.entity.Admin;
 import com.zhaoxiang.mapper.AdminMapper;
 import com.zhaoxiang.service.AdminService;
 import com.zhaoxiang.vo.AdminVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Author: Rivers
@@ -17,9 +21,12 @@ public class AdminServiceImpl implements AdminService {
     private AdminMapper adminMapper;
 
     @Override
-    public AdminVO getEnabledUserByUsername(String username) {
+    public AdminVO getStatusEqualUserByUsername(String username, Admin.Status status) {
 
-        AdminVO admin = adminMapper.getStatusEqualUserByUsername(null);
+        Map<String, Object> params = new HashMap<>();
+        params.put("username", username);
+        params.put("status", status.ordinal());
+        AdminVO admin = adminMapper.getStatusEqualUserByUsername(params);
         return admin;
     }
 }

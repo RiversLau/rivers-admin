@@ -9,11 +9,13 @@
         <result column="username" jdbcType="VARCHAR" property="username"/>
         <result column="password" jdbcType="VARCHAR" property="password"/>
         <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="head_image_url" jdbcType="VARCHAR" property="headImageUrl"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
 
     <select id="getStatusEqualUserByUsername" parameterType="Map" resultMap="wholeResultMap">
-        select id, user_name, password, phone
-        from admin_user
-        where user_name = #{username, jdbcType=VARCHAR} and valid = '1'
+        select id, username, password, phone, head_image_url, create_time
+        from admin
+        where username = #{username, jdbcType=VARCHAR} and status = #{status, jdbcType=INTEGER}
     </select>
 </mapper>

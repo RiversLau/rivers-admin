@@ -1,5 +1,6 @@
 package com.zhaoxiang.vo;
 
+import com.zhaoxiang.entity.Admin;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,4 +16,5 @@ public class AdminVO extends BaseVO {
     private String username;
     private String password;
     private String headImageUrl;
+    private Admin.Status status;
 }

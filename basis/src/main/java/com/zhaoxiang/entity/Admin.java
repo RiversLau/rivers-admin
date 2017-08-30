@@ -11,6 +11,16 @@ import lombok.Setter;
 @Setter
 public class Admin extends BaseEntity {
 
+    /**
+     * DELETED: 对应0，删除
+     * FORBIDDEN：对应1，禁用
+     * AVAILABLE：对应2，可用
+     */
+    public enum Status {
+        DELETED, FORBIDDEN, AVAILABLE
+    }
+
+    private Status status;
     private String phone;
     private String username;
     private String password;

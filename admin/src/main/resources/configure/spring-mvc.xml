@@ -20,7 +20,7 @@
     </bean>
 
     <!-- 异常转换处理器 -->
-    <bean id="exceptionResolver" class="com.zhaoxiang.common.ExceptionResolver"/>
+    <!--<bean id="exceptionResolver" class="com.zhaoxiang.common.ExceptionResolver"/>-->
 
     <!-- 请求耗时记录拦截器，配置拦截所有请求 -->
     <mvc:interceptors>
