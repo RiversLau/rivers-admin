@@ -1,7 +1,6 @@
 package com.zhaoxiang.common;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import lombok.extern.log4j.Log4j;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver;
 
@@ -14,9 +13,8 @@ import java.io.PrintWriter;
  * Author: Rivers
  * Date: 2017/6/28 09:30
  */
+@Log4j
 public class ExceptionResolver extends AbstractHandlerExceptionResolver {
-
-    private Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected ModelAndView doResolveException(HttpServletRequest request,

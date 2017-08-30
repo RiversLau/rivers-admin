@@ -1,7 +1,6 @@
 package com.zhaoxiang.common;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import lombok.extern.log4j.Log4j;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -12,9 +11,8 @@ import javax.servlet.http.HttpServletResponse;
  * Author: Rivers
  * Date: 2017/6/28 09:44
  */
+@Log4j
 public class LogInterceptor extends HandlerInterceptorAdapter {
-
-    private static Logger logger = LogManager.getLogger(LogInterceptor.class);
 
     private long iniTime;
 
@@ -25,12 +23,12 @@ public class LogInterceptor extends HandlerInterceptorAdapter {
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
             throws Exception {
 
-        logger.info("************* TOTAL TIME *************");
-        logger.info("************* " + handler.toString() + " *************");
+        log.info("************* TOTAL TIME *************");
+        log.info("************* " + handler.toString() + " *************");
 
-        logger.info("************* REQUEST '" + request.getServletPath() + "' " + (System.currentTimeMillis() - iniTime) + "millis consumed *************");
+        log.info("************* REQUEST '" + request.getServletPath() + "' " + (System.currentTimeMillis() - iniTime) + "millis consumed *************");
 
-        logger.info("************* END *************");
+        log.info("************* END *************");
 
         super.afterCompletion(request, response, handler, ex);
     }
