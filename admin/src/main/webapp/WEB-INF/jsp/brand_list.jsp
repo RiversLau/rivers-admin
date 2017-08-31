@@ -125,8 +125,13 @@
                                 </table>
                             </div>
                             <div class="am-u-lg-12 am-cf">
-                                <div class="am-fr">
+                                <div class="am-fl">
                                     <ul class="am-pagination tpl-pagination">
+                                        每页 ${pageInfo.pageSize} 条, 共 ${pageInfo.total} 条
+                                    </ul>
+                                </div>
+                                <div class="am-fr">
+                                    <ul id="page" class="am-pagination tpl-pagination">
                                         <li class="am-disabled"><a href="#">«</a></li>
                                         <li class="am-active"><a href="#">1</a></li>
                                         <li><a href="#">2</a></li>
@@ -148,5 +153,10 @@
 <jsp:include page="common/page_footer.jsp"/>
 <script src="/resource/js/amazeui.datatables.min.js"></script>
 <script src="/resource/js/dataTables.responsive.min.js"></script>
+<script>
+    $(function() {
+       $('#page') 
+    });
+</script>
 </body>
 </html>
