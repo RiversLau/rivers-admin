@@ -1,9 +1,9 @@
 package com.zhaoxiang.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.zhaoxiang.entity.Product;
-import com.zhaoxiang.service.ProductService;
-import com.zhaoxiang.vo.ProductVO;
+import com.zhaoxiang.entity.Brand;
+import com.zhaoxiang.service.BrandService;
+import com.zhaoxiang.vo.BrandVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,21 +11,21 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Author: RiversLau
- * Date: 2017/8/31 9:52
+ * Date: 2017/8/31 14:58
  */
 @Controller
-@RequestMapping("/product")
-public class ProductCtrl {
+@RequestMapping("/brand")
+public class BrandCtrl {
 
     @Autowired
-    private ProductService productService;
+    private BrandService brandService;
 
     @RequestMapping("/list")
-    public ModelAndView listProduct() {
+    public ModelAndView listBrand() {
 
-        PageInfo<ProductVO> pageInfo = productService.getStatusNotEqualList(Product.Status.DELETED);
+        PageInfo<BrandVO> pageInfo = brandService.getStatusNotEqualList(Brand.Status.DELETED);
 
-        ModelAndView mv = new ModelAndView("/product_list");
+        ModelAndView mv = new ModelAndView("brand_list");
         mv.addObject("pageInfo", pageInfo);
 
         return mv;

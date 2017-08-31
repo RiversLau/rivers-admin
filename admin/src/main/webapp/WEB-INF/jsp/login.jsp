@@ -1,67 +1,43 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>仁仁德康复 | 登录</title>
+    <title>仁仁德康复|登录</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
     <jsp:include page="common/page_header.jsp"/>
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-    <div class="login-logo">
-        <img src="/resource/img/logo80_2.png"/>
-    </div>
-    <div class="login-box-body">
-        <p class="login-box-msg">
-            登录
-        </p>
-        <form action="/user/login" method="post">
-            <div class="form-group has-feedback">
-                <input name="username" type="text" class="form-control" placeholder="用户名">
-                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+<body data-type="login">
+<script src="/resource/js/theme.js"></script>
+<div class="am-g tpl-g">
+    <jsp:include page="common/theme.jsp"/>
+    <div class="tpl-login">
+        <div class="tpl-login-content">
+            <div class="tpl-login-logo">
+
             </div>
-            <div class="form-group has-feedback">
-                <input name="password" type="password" class="form-control" placeholder="密码">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            </div>
-            <div class="form-group has-feedback">
-                <div class="checkbox icheck">
-                    <label>
-                        <input id="remember" type="checkbox" checked="checked" name="remember" value="1">&nbsp;&nbsp;&nbsp;记住密码
+            <form action="/user/login" method="post" class="am-form tpl-form-line-form">
+                <div class="am-form-group">
+                    <input type="text" class="tpl-form-input" name="username" placeholder="请输入账号">
+                </div>
+                <div class="am-form-group">
+                    <input type="password" class="tpl-form-input" name="password" placeholder="请输入密码">
+                </div>
+                <div class="am-form-group tpl-login-remember-me">
+                    <input id="remember-me" type="checkbox">
+                    <label for="remember-me">
+                        记住密码
                     </label>
                 </div>
-            </div>
-            <div class="form-group has-feedback">
-                <button type="submit" class="btn btn-primary btn-block">登录</button>
-            </div>
-        </form>
-        <a href="#">系统帮助</a><br>
-        <a href="#" class="text-center">忘记密码</a>
+                <div class="am-form-group">
+                    <button type="submit" class="am-btn am-btn-primary am-btn-block tpl-btn-bg-color-success tpl-login-btn">提交
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-<script src="/resource/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<script src="/resource/bootstrap/js/bootstrap.min.js"></script>
-<script src="/resource/plugins/iCheck/icheck.min.js"></script>
-<script>
-    $(function () {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '30%' // optional
-        });
-
-        $('#remember').on('ifClicked', function () {
-           if($(this).attr("checked", true)) {
-               $(this).iCheck('uncheck');
-               $(this).attr('checked', false);
-               $(this).attr("value", "0");
-           } else {
-               $(this).iCheck('check');
-               $(this).attr('checked', true);
-               $(this).attr("value", "1");
-           }
-        });
-    });
-</script>
+<jsp:include page="common/page_footer.jsp"/>
 </body>
 </html>

@@ -1,131 +1,279 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>仁仁德康复 | 首页</title>
+    <title>仁仁德康复|首页</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
     <jsp:include page="common/page_header.jsp"/>
+    <script src="/resource/js/echarts.min.js"></script>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+
+<body data-type="index">
+<script src="/resource/js/theme.js"></script>
+<div class="am-g tpl-g">
     <jsp:include page="common/top_bar.jsp"/>
+    <jsp:include page="common/theme.jsp"/>
     <jsp:include page="common/left_side_bar.jsp"/>
+    <!-- 内容区域 -->
+    <div class="tpl-content-wrapper">
 
-    <div class="content-wrapper">
-        <section class="content-header">
-            <h1>
-                系统面板
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
-                <li class="active">系统面板</li>
-            </ol>
-        </section>
-
-        <section class="content">
+        <div class="container-fluid am-cf">
             <div class="row">
-                <div class="col-lg-3 col-xs-6">
-                    <div class="small-box bg-aqua">
-                        <div class="inner">
-                            <h3>12</h3>
-                            <p>待派送订单</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-cube"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">更多<i class="fa fa-arrow-circle-right"></i></a>
+                <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
+                    <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 部件首页
+                        <small>Amaze UI</small>
                     </div>
+                    <p class="page-header-description">Amaze UI 含近 20 个 CSS 组件、20 余 JS 组件，更有多个包含不同主题的 Web 组件。</p>
                 </div>
-                <div class="col-lg-3 col-xs-6">
-                    <div class="small-box bg-green">
-                        <div class="inner">
-                            <h3>53<sup style="font-size: 20px">%</sup></h3>
-                            <p>待确认工单</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-cloud"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">更多<i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-xs-6">
-                    <div class="small-box bg-yellow">
-                        <div class="inner">
-                            <h3>20</h3>
-                            <p>待审核医师</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">更多<i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-xs-6">
-                    <div class="small-box bg-red">
-                        <div class="inner">
-                            <h3>2</h3>
-                            <p>待回复提问</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-chatbubble-working"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">更多<i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
+                <div class="am-u-lg-3 tpl-index-settings-button">
+                    <button type="button" class="page-header-button"><span class="am-icon-paint-brush"></span> 设置
+                    </button>
                 </div>
             </div>
-            <div class="row">
-                <section class="col-lg-7 connectedSortable">
-                    <div class="nav-tabs-custom">
-                        <ul class="nav nav-tabs pull-right">
-                            <li class="active"><a href="#revenue-chart" data-toggle="tab">地区</a></li>
-                            <li><a href="#sales-chart" data-toggle="tab">用户</a></li>
-                            <li class="pull-left header"><i class="fa fa-inbox"></i>销售报表</li>
-                        </ul>
-                        <div class="tab-content no-padding">
-                            <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-                            <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
-                        </div>
-                    </div>
-                </section>
-                <section class="col-lg-5 connectedSortable">
-                    <div class="box box-solid bg-teal-gradient">
-                        <div class="box-header">
-                            <i class="fa fa-th"></i>
-                            <h3 class="box-title">销售报表</h3>
-                            <div class="box-tools pull-right">
-                                <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i>
-                                </button>
+
+        </div>
+
+        <div class="row-content am-cf">
+            <div class="row  am-cf">
+                <div class="am-u-sm-12 am-u-md-12 am-u-lg-4">
+                    <div class="widget am-cf">
+                        <div class="widget-head am-cf">
+                            <div class="widget-title am-fl">月度财务收支计划</div>
+                            <div class="widget-function am-fr">
+                                <a href="javascript:;" class="am-icon-cog"></a>
                             </div>
                         </div>
-                        <div class="box-body border-radius-none">
-                            <div class="chart" id="line-chart" style="height: 250px;"></div>
-                        </div>
-                        <div class="box-footer no-border">
-                            <div class="row">
-                                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                                    <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgColor="#39CCCC">
-                                    <div class="knob-label">订单</div>
+                        <div class="widget-body am-fr">
+                            <div class="am-fl">
+                                <div class="widget-fluctuation-period-text">
+                                    ￥61746.45
+                                    <button class="widget-fluctuation-tpl-btn">
+                                        <i class="am-icon-calendar"></i>
+                                        更多月份
+                                    </button>
                                 </div>
-                                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                                    <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgColor="#39CCCC">
-                                    <div class="knob-label">金额</div>
+                            </div>
+                            <div class="am-fr am-cf">
+                                <div class="widget-fluctuation-description-amount text-success" am-cf>
+                                    +￥30420.56
+
                                 </div>
-                                <div class="col-xs-4 text-center">
-                                    <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgColor="#39CCCC">
-                                    <div class="knob-label">工单</div>
+                                <div class="widget-fluctuation-description-text am-text-right">
+                                    8月份收入
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
+
+                </div>
+                <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
+                    <div class="widget widget-primary am-cf">
+                        <div class="widget-statistic-header">
+                            本季度利润
+                        </div>
+                        <div class="widget-statistic-body">
+                            <div class="widget-statistic-value">
+                                ￥27,294
+                            </div>
+                            <div class="widget-statistic-description">
+                                本季度比去年多收入 <strong>2593元</strong> 人民币
+                            </div>
+                            <span class="widget-statistic-icon am-icon-credit-card-alt"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
+                    <div class="widget widget-purple am-cf">
+                        <div class="widget-statistic-header">
+                            本季度利润
+                        </div>
+                        <div class="widget-statistic-body">
+                            <div class="widget-statistic-value">
+                                ￥27,294
+                            </div>
+                            <div class="widget-statistic-description">
+                                本季度比去年多收入 <strong>2593元</strong> 人民币
+                            </div>
+                            <span class="widget-statistic-icon am-icon-support"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+
+            <div class="row am-cf">
+                <div class="am-u-sm-12 am-u-md-8">
+                    <div class="widget am-cf">
+                        <div class="widget-head am-cf">
+                            <div class="widget-title am-fl">月度财务收支计划</div>
+                            <div class="widget-function am-fr">
+                                <a href="javascript:;" class="am-icon-cog"></a>
+                            </div>
+                        </div>
+                        <div class="widget-body-md widget-body tpl-amendment-echarts am-fr" id="tpl-echarts">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-u-sm-12 am-u-md-4">
+                    <div class="widget am-cf">
+                        <div class="widget-head am-cf">
+                            <div class="widget-title am-fl">专用服务器负载</div>
+                            <div class="widget-function am-fr">
+                                <a href="javascript:;" class="am-icon-cog"></a>
+                            </div>
+                        </div>
+                        <div class="widget-body widget-body-md am-fr">
+
+                            <div class="am-progress-title">CPU Load <span class="am-fr am-progress-title-more">28% / 100%</span>
+                            </div>
+                            <div class="am-progress">
+                                <div class="am-progress-bar" style="width: 15%"></div>
+                            </div>
+                            <div class="am-progress-title">CPU Load <span class="am-fr am-progress-title-more">28% / 100%</span>
+                            </div>
+                            <div class="am-progress">
+                                <div class="am-progress-bar  am-progress-bar-warning" style="width: 75%"></div>
+                            </div>
+                            <div class="am-progress-title">CPU Load <span class="am-fr am-progress-title-more">28% / 100%</span>
+                            </div>
+                            <div class="am-progress">
+                                <div class="am-progress-bar am-progress-bar-danger" style="width: 35%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row am-cf">
+                <div class="am-u-sm-12 am-u-md-12 am-u-lg-4 widget-margin-bottom-lg ">
+                    <div class="tpl-user-card am-text-center widget-body-lg">
+                        <div class="tpl-user-card-title">
+                            禁言小张
+                        </div>
+                        <div class="achievement-subheading">
+                            月度最佳员工
+                        </div>
+                        <img class="achievement-image" src="/resource/img/user07.png" alt="">
+                        <div class="achievement-description">
+                            禁言小张在
+                            <strong>30天内</strong> 禁言了
+                            <strong>200多</strong>人。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-u-sm-12 am-u-md-12 am-u-lg-8 widget-margin-bottom-lg">
+
+                    <div class="widget am-cf widget-body-lg">
+
+                        <div class="widget-body  am-fr">
+                            <div class="am-scrollable-horizontal ">
+                                <table width="100%" class="am-table am-table-compact am-text-nowrap tpl-table-black "
+                                       id="example-r">
+                                    <thead>
+                                    <tr>
+                                        <th>文章标题</th>
+                                        <th>作者</th>
+                                        <th>时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="gradeX">
+                                        <td>新加坡大数据初创公司 Latize 获 150 万美元风险融资</td>
+                                        <td>张鹏飞</td>
+                                        <td>2016-09-26</td>
+                                        <td>
+                                            <div class="tpl-table-black-operation">
+                                                <a href="javascript:;">
+                                                    <i class="am-icon-pencil"></i> 编辑
+                                                </a>
+                                                <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                    <i class="am-icon-trash"></i> 删除
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>自拍的“政治角色”：观众背对希拉里自拍合影表示“支持”</td>
+                                        <td>天纵之人</td>
+                                        <td>2016-09-26</td>
+                                        <td>
+                                            <div class="tpl-table-black-operation">
+                                                <a href="javascript:;">
+                                                    <i class="am-icon-pencil"></i> 编辑
+                                                </a>
+                                                <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                    <i class="am-icon-trash"></i> 删除
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="gradeX">
+                                        <td>关于创新管理，我想和你当面聊聊。</td>
+                                        <td>王宽师</td>
+                                        <td>2016-09-26</td>
+                                        <td>
+                                            <div class="tpl-table-black-operation">
+                                                <a href="javascript:;">
+                                                    <i class="am-icon-pencil"></i> 编辑
+                                                </a>
+                                                <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                    <i class="am-icon-trash"></i> 删除
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>究竟是趋势带动投资，还是投资引领趋势？</td>
+                                        <td>着迷</td>
+                                        <td>2016-09-26</td>
+                                        <td>
+                                            <div class="tpl-table-black-operation">
+                                                <a href="javascript:;">
+                                                    <i class="am-icon-pencil"></i> 编辑
+                                                </a>
+                                                <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                    <i class="am-icon-trash"></i> 删除
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>Docker领域再添一员，网易云发布“蜂巢”，加入云计算之争</td>
+                                        <td>醉里挑灯看键</td>
+                                        <td>2016-09-26</td>
+                                        <td>
+                                            <div class="tpl-table-black-operation">
+                                                <a href="javascript:;">
+                                                    <i class="am-icon-pencil"></i> 编辑
+                                                </a>
+                                                <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                    <i class="am-icon-trash"></i> 删除
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                    <!-- more data -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
-    <jsp:include page="common/copyright_footer.jsp"/>
-    <div class="control-sidebar-bg"></div>
+</div>
 </div>
 <jsp:include page="common/page_footer.jsp"/>
+<script src="/resource/js/amazeui.datatables.min.js"></script>
+<script src="/resource/js/dataTables.responsive.min.js"></script>
 </body>
 </html>
-

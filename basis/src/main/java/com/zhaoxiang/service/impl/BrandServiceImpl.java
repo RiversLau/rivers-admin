@@ -3,39 +3,39 @@ package com.zhaoxiang.service.impl;
 import com.github.pagehelper.ISelect;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.zhaoxiang.entity.Product;
-import com.zhaoxiang.mapper.ProductMapper;
-import com.zhaoxiang.service.ProductService;
-import com.zhaoxiang.vo.ProductVO;
+import com.zhaoxiang.entity.Brand;
+import com.zhaoxiang.mapper.BrandMapper;
+import com.zhaoxiang.service.BrandService;
+import com.zhaoxiang.vo.BrandVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
  * Author: RiversLau
- * Date: 2017/8/31 9:53
+ * Date: 2017/8/31 15:09
  */
-@Service("productService")
-public class ProductServiceImpl implements ProductService {
+@Service("brandService")
+public class BrandServiceImpl implements BrandService {
 
     @Autowired
-    private ProductMapper productMapper;
+    private BrandMapper brandMapper;
 
     @Override
-    public PageInfo<ProductVO> getStatusNotEqualList(Product.Status status) {
+    public PageInfo<BrandVO> getStatusNotEqualList(Brand.Status status) {
 
         final Map<String, Object> params = new HashMap<>();
         params.put("status", status.ordinal());
 
-        PageInfo<ProductVO> pageInfo = PageHelper.startPage(1, 10).doSelectPageInfo(new ISelect() {
+        PageInfo<BrandVO> pageInfo = PageHelper.startPage(1, 10).doSelectPageInfo(new ISelect() {
             @Override
             public void doSelect() {
-                productMapper.getStatusNotEqualList(params);
+                brandMapper.getStatusNotEqualList(params);
             }
         });
+
         return pageInfo;
     }
 }

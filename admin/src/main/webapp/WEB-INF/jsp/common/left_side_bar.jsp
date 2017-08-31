@@ -1,114 +1,106 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<aside class="main-sidebar">
-    <section class="sidebar">
-        <div class="user-panel">
-            <div class="pull-left image">
-                <img src="/resource/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+<div class="left-sidebar">
+    <div class="tpl-sidebar-user-panel">
+        <div class="tpl-user-panel-slide-toggleable">
+            <div class="tpl-user-panel-profile-picture">
+                <img src="/resource/img/user04.png" alt="">
             </div>
-            <div class="pull-left info">
-                <p></p>
-                <span>刘兆祥</span>
-            </div>
+            <span class="user-panel-logged-in-text">
+              禁言小张
+            </span>
+            <a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
         </div>
-        <ul class="sidebar-menu">
-            <li class="header">系统主菜单</li>
-            <li class="active treeview">
-                <a href="#">
-                    <i class="fa fa-cubes"></i> <span>产品管理</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li class="active"><a href="/product/list"><i class="fa fa-cube"></i>产品管理</a></li>
-                    <li><a href="/product/list"><i class="fa fa-database"></i>类别管理</a></li>
-                    <li><a href="#"><i class="fa fa-heartbeat"></i>疾病管理</a></li>
-                    <li><a href="#"><i class="fa fa-apple"></i>品牌管理</a></li>
-                    <li><a href="#"><i class="fa fa-suitcase"></i>规格管理</a></li>
-                    <li><a href="#"><i class="fa fa-tree"></i>模板管理</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-home"></i>
-                    <span>库存管理</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-home"></i>库存管理</a></li>
-                    <li><a href="#"><i class="fa fa-map-o"></i>地址管理</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-user-md"></i>
-                    <span>医师管理</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-user-md"></i>医师管理</a></li>
-                    <li><a href="#"><i class="fa fa-eye"></i>审核管理</a></li>
-                    <li><a href="#"><i class="fa fa-graduation-cap"></i>职称管理</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-wheelchair"></i>
-                    <span>病人管理</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-wheelchair"></i>病人管理</a></li>
-                    <li><a href="#"><i class="fa fa-comments-o"></i>提问管理</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-shopping-cart"></i>
-                    <span>订单管理</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-shopping-cart"></i>订单管理</a></li>
-                    <li><a href="#"><i class="fa fa-wrench"></i>工单管理</a></li>
-                    <li><a href="#"><i class="fa fa-star-o"></i>评价管理</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-folder-open-o"></i>
-                    <span>基础管理</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-picture-o"></i>素材管理</a></li>
-                    <li><a href="#"><i class="fa fa-map-marker"></i>地区管理</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-gears"></i>
-                    <span>系统配置</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-users"></i>用户管理</a></li>
-                    <li><a href="#"><i class="fa fa-sitemap"></i>角色管理</a></li>
-                    <li><a href="#"><i class="fa fa-sliders"></i>权限管理</a></li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-</aside>
+    </div>
+
+    <ul class="sidebar-nav">
+        <li class="sidebar-nav-heading">系统主菜单</li>
+        <li class="sidebar-nav-link">
+            <a href="javascript:;" class="sidebar-nav-sub-title active">
+                <i class="am-icon-cubes sidebar-nav-link-logo"></i> 产品管理
+                <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+            </a>
+            <ul class="sidebar-nav sidebar-nav-sub">
+                <li class="sidebar-nav-link">
+                    <a href="/product/list">
+                        <span class="am-icon-cube sidebar-nav-link-logo"></span> 产品管理
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="table-list-img.html">
+                        <span class="am-icon-bitbucket sidebar-nav-link-logo"></span> 类别管理
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="table-list-img.html">
+                        <span class="am-icon-bitbucket sidebar-nav-link-logo"></span> 疾病管理
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="/brand/list">
+                        <span class="am-icon-bitbucket sidebar-nav-link-logo"></span> 品牌管理
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="tables.html">
+                <i class="am-icon-table sidebar-nav-link-logo"></i> 表格
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="calendar.html">
+                <i class="am-icon-calendar sidebar-nav-link-logo"></i> 日历
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="form.html">
+                <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 表单
+
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="chart.html">
+                <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
+
+            </a>
+        </li>
+
+        <li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
+        <li class="sidebar-nav-link">
+            <a href="javascript:;" class="sidebar-nav-sub-title">
+                <i class="am-icon-table sidebar-nav-link-logo"></i> 数据列表
+                <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+            </a>
+            <ul class="sidebar-nav sidebar-nav-sub">
+                <li class="sidebar-nav-link">
+                    <a href="table-list.html">
+                        <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文字列表
+                    </a>
+                </li>
+
+                <li class="sidebar-nav-link">
+                    <a href="table-list-img.html">
+                        <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图文列表
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="sign-up.html">
+                <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
+                <span class="am-badge am-badge-secondary sidebar-nav-link-logo-ico am-round am-fr am-margin-right-sm">6</span>
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="login.html">
+                <i class="am-icon-key sidebar-nav-link-logo"></i> 登录
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="404.html">
+                <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
+            </a>
+        </li>
+
+    </ul>
+</div>
