@@ -39,7 +39,7 @@ public class AdminCtrl {
             }
         }
 
-        return "home";
+        return "redirect:/home";
     }
 
     @RequestMapping("/logout")

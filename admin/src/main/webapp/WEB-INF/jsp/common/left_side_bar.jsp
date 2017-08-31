@@ -20,8 +20,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="index.html"><i class="fa fa-cube"></i>产品管理</a></li>
-                    <li><a href="#"><i class="fa fa-database"></i>类别管理</a></li>
+                    <li class="active"><a href="/product/list"><i class="fa fa-cube"></i>产品管理</a></li>
+                    <li><a href="/product/list"><i class="fa fa-database"></i>类别管理</a></li>
                     <li><a href="#"><i class="fa fa-heartbeat"></i>疾病管理</a></li>
                     <li><a href="#"><i class="fa fa-apple"></i>品牌管理</a></li>
                     <li><a href="#"><i class="fa fa-suitcase"></i>规格管理</a></li>

@@ -15,4 +15,10 @@ public class BaseCtrl {
 
         return "login";
     }
+
+    @RequestMapping("/home")
+    public String homePage() {
+
+        return "home";
+    }
 }
