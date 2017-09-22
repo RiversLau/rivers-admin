@@ -31,7 +31,7 @@
                                 <div class="am-form-group">
                                     <div class="am-btn-toolbar">
                                         <div class="am-btn-group am-btn-group-xs">
-                                            <button type="button" class="am-btn am-btn-default am-btn-success"><span
+                                            <button type="button" id="saveBrandBtn" class="am-btn am-btn-default am-btn-success"><span
                                                     class="am-icon-plus"></span> 新增品牌
                                             </button>
                                         </div>
@@ -130,16 +130,8 @@
                                         每页 ${pageInfo.pageSize} 条, 共 ${pageInfo.total} 条
                                     </ul>
                                 </div>
-                                <div class="am-fr">
-                                    <ul id="page" class="am-pagination tpl-pagination">
-                                        <li class="am-disabled"><a href="#">«</a></li>
-                                        <li class="am-active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">5</a></li>
-                                        <li><a href="#">»</a></li>
-                                    </ul>
+                                <div id="page" class="am-fr">
+
                                 </div>
                             </div>
                         </div>
@@ -155,7 +147,28 @@
 <script src="/resource/js/dataTables.responsive.min.js"></script>
 <script>
     $(function() {
-       $('#page') 
+
+        var page = window.location.search.match(/page=(\d+)/);
+
+       $('#page').page({
+           curr:page?page[1]:1,
+           theme:'success',
+           first:'首页',
+           last:'尾页',
+           prev:false,
+           next:false,
+           pages:${pageInfo.pages},
+           groups:3,
+           jump:function(context, first) {
+               if (!first) {
+                   window.location.href = '?page='+context.option.curr;
+               }
+           }
+       })
+
+       $('#saveBrandBtn').click(function() {
+           window.location.href = '/brand/edit';
+       })
     });
 </script>
 </body>

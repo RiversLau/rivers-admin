@@ -30,4 +30,10 @@ public class BrandCtrl {
 
         return mv;
     }
+
+    @RequestMapping("/edit")
+    public String saveOrEditBrand() {
+
+        return "brand_edit";
+    }
 }

@@ -1,17 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="left-sidebar">
-    <div class="tpl-sidebar-user-panel">
-        <div class="tpl-user-panel-slide-toggleable">
-            <div class="tpl-user-panel-profile-picture">
-                <img src="/resource/img/user04.png" alt="">
-            </div>
-            <span class="user-panel-logged-in-text">
-              禁言小张
-            </span>
-            <a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
-        </div>
-    </div>
-
     <ul class="sidebar-nav">
         <li class="sidebar-nav-heading">系统主菜单</li>
         <li class="sidebar-nav-link">
@@ -101,6 +89,5 @@
                 <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
             </a>
         </li>
-
     </ul>
 </div>

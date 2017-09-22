@@ -19,6 +19,8 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
+    <mvc:resources mapping="/resources/**" location="/resource"/>
+
     <!-- 异常转换处理器 -->
     <!--<bean id="exceptionResolver" class="com.zhaoxiang.common.ExceptionResolver"/>-->
 
