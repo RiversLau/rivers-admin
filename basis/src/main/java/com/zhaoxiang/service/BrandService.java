@@ -16,4 +16,17 @@ public interface BrandService {
      * @return
      */
     PageInfo<BrandVO> getStatusNotEqualList(Brand.Status status);
+
+    /**
+     * 添加或更新品牌信息
+     * @param brandVO
+     */
+    void saveOrUpdateBrand(BrandVO brandVO);
+
+    /**
+     * 通过ID获取品牌信息
+     * @param id
+     * @return
+     */
+    BrandVO getBrandById(Integer id);
 }

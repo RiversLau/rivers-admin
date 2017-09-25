@@ -27,18 +27,28 @@
                     </div>
                     <div class="widget-body am-fr">
 
-                        <form class="am-form tpl-form-border-form tpl-form-border-br">
+                        <form class="am-form tpl-form-border-form tpl-form-border-br" action="/brand/save"
+                                method="post">
 
                             <div class="am-form-group">
                                 <label for="user-logo" class="am-u-sm-3 am-form-label">品牌Logo</label>
                                 <div class="am-u-sm-9">
                                     <div class="am-form-group am-form-file">
                                         <div class="tpl-form-file-img">
-                                            <img src="" alt="" hidden>
+                                            <c:choose>
+                                                <c:when test="${empty brand}">
+                                                    <img id="showImage" src="" alt="" hidden>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <img id="showImage" src="${brand.logoUrl}"/>
+                                                </c:otherwise>
+                                            </c:choose>
+
                                         </div>
                                         <button type="button" class="am-btn am-btn-danger am-btn-sm">
                                             <i class="am-icon-cloud-upload"></i> 选择图片</button>
-                                        <input id="user-logo" type="file" multiple="">
+                                        <input id="user-logo" type="file" onchange="uploadFile()">
+                                        <input id="logoUrl" hidden name="logoUrl" value=""/>
                                     </div>
                                 </div>
                             </div>
@@ -46,16 +56,16 @@
                             <div class="am-form-group">
                                 <label for="user-name" class="am-u-sm-3 am-form-label">品牌名称</label>
                                 <div class="am-u-sm-9">
-                                    <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入品牌名称">
+                                    <input type="text" name="name" class="tpl-form-input" id="user-name" placeholder="请输入品牌名称">
                                 </div>
                             </div>
 
                             <div class="am-form-group">
                                 <label for="user-status" class="am-u-sm-3 am-form-label">状态</label>
                                 <div class="am-u-sm-9">
-                                    <select data-am-selected id="user-status" style="display: none;">
-                                        <option value="a">有效</option>
-                                        <option value="b">无效</option>
+                                    <select data-am-selected id="user-status" name="status" style="display: none;">
+                                        <option value="AVAILABLE">有效</option>
+                                        <option value="FORBIDDEN">无效</option>
                                     </select>
                                 </div>
                             </div>
@@ -63,13 +73,13 @@
                             <div class="am-form-group">
                                 <label for="user-intro" class="am-u-sm-3 am-form-label">品牌简介</label>
                                 <div class="am-u-sm-9">
-                                    <textarea class="" rows="10" id="user-intro" placeholder="请输入品牌简介"></textarea>
+                                    <textarea class="" name="description" rows="10" id="user-intro" placeholder="请输入品牌简介"></textarea>
                                 </div>
                             </div>
 
                             <div class="am-form-group">
                                 <div class="am-u-sm-9 am-u-sm-push-3">
-                                    <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+                                    <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
                                 </div>
                             </div>
                         </form>
@@ -83,5 +93,15 @@
 <jsp:include page="common/page_footer.jsp"/>
 <script src="/resource/js/amazeui.datatables.min.js"></script>
 <script src="/resource/js/dataTables.responsive.min.js"></script>
+<script>
+    function uploadFile() {
+        var fileName = $('#user-logo').val();
+        if (fileName) {
+            $('#logoUrl').attr('value', 'http://ouvay1ko4.bkt.clouddn.com/FqTGwVrSt2-vAtcd10j7WRx35rgQ');
+            $('#showImage').attr('src', 'http://ouvay1ko4.bkt.clouddn.com/FqTGwVrSt2-vAtcd10j7WRx35rgQ');
+            $('#showImage').removeAttr('hidden');
+        }
+    }
+</script>
 </body>
 </html>

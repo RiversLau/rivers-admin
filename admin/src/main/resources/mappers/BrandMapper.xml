@@ -19,4 +19,24 @@
         from brand
         where status != #{status, jdbcType=INTEGER}
     </select>
+
+    <insert id="saveBrand" parameterType="com.zhaoxiang.entity.Brand">
+        insert into brand(
+          name, logo_url, description, status, create_time, update_time
+        )
+        values(
+          #{name, jdbcType=VARCHAR},
+          #{logoUrl, jdbcType=VARCHAR},
+          #{description, jdbcType=VARCHAR},
+          #{status, jdbcType=INTEGER, typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler},
+          #{createTime, jdbcType=TIMESTAMP},
+          #{updateTime, jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <select id="getBrandById" resultMap="wholeResultMap">
+        select id, name, logo_url, description, status, create_time, update_time
+        from brand
+        where id = #{id, jdbcType=INTEGER}
+    </select>
 </mapper>

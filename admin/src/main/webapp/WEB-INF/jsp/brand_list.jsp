@@ -81,7 +81,7 @@
                                                         <td>${brand.updateTimeStr}</td>
                                                         <td>
                                                             <div class="tpl-table-black-operation">
-                                                                <a href="javascript:;">
+                                                                <a href="/brand/edit/${brand.id}">
                                                                     <i class="am-icon-pencil"></i> 编辑
                                                                 </a>
                                                                 <a href="javascript:;" class="tpl-table-black-operation-del">
@@ -109,7 +109,7 @@
                                                         <td>${brand.updateTimeStr}</td>
                                                         <td>
                                                             <div class="tpl-table-black-operation">
-                                                                <a href="javascript:;">
+                                                                <a href="/brand/edit/${brand.id}">
                                                                     <i class="am-icon-pencil"></i> 编辑
                                                                 </a>
                                                                 <a href="javascript:;" class="tpl-table-black-operation-del">
